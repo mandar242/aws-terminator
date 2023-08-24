@@ -128,10 +128,12 @@ Statement:
     Effect: Allow
     Action:
       - rds:CreateDBCluster
+      - rds:CreateGlobalCluster
       - elasticache:CreateCacheCluster
       - redshift:CreateCluster
     Resource:
       - 'arn:aws:rds:{{ aws_region }}:{{ aws_account_id }}:cluster:*'
+      - 'arn:aws:rds:{{ aws_region }}:{{ aws_account_id }}:global-cluster:*'
       - 'arn:aws:rds:{{ aws_region }}:{{ aws_account_id }}:subgrp:*'
       - 'arn:aws:elasticache:{{ aws_region }}:{{ aws_account_id }}:cluster:*'
       - 'arn:aws:elasticache:{{ aws_region }}:{{ aws_account_id }}:subnetgroup:*'
